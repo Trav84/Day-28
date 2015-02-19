@@ -5,10 +5,9 @@ angular.module('app.controllers', []).controller('submitController', function($s
 	$scope.myImageCaption = '';
 	$scope.menuHidden = false;
 	$scope.images = [];
-	getRequest();
+	
 
 	function getRequest() {
-		console.log("getRequest ran");
 
 		$http.get('http://tiny-pizza-server.herokuapp.com/collections/travis-angular')
 		.success(function(response) {
@@ -30,6 +29,7 @@ angular.module('app.controllers', []).controller('submitController', function($s
 			$scope.menuHidden = !$scope.menuHidden;
 		};
 	}
+	getRequest();
 
 	$interval(getRequest, 5000);
 
