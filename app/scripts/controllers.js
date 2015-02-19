@@ -6,7 +6,6 @@ angular.module('app.controllers', []).controller('submitController', function($s
 	$scope.menuHidden = false;
 	$scope.images = [];
 	
-
 	function getRequest() {
 
 		$http.get('http://tiny-pizza-server.herokuapp.com/collections/travis-angular')
@@ -25,13 +24,15 @@ angular.module('app.controllers', []).controller('submitController', function($s
 			console.log(err);
 		});
 
-		$scope.expandMenuClick = function() {
-			$scope.menuHidden = !$scope.menuHidden;
-		};
+
 	}
 	getRequest();
 
 	$interval(getRequest, 5000);
+
+	$scope.expandMenuClick = function() {
+		$scope.menuHidden = !$scope.menuHidden;
+	};
 
 	$scope.cancelClick = function() {
 
