@@ -1,3 +1,84 @@
 @import 'reset';
 
+body {
+	background-color: rgb(237,238,239);
+}
 
+header {
+	background-color: rgb(75,110,150);
+
+	div {
+		padding:1em 1em;
+		font-size:2em;
+	}
+
+	button {
+		padding:1.4em 1.4em;
+		border-radius:5px;
+		border: none;
+		color: white;
+		font-size:0.5em;
+	}
+
+	.submit-button {
+		background-color: rgb(23,170,86);
+	}
+
+	.expand-menu {
+		background-color:white;
+		text-align: center;
+	}
+
+	input {
+		display:block;
+		margin:0 auto;
+		width:60%;
+		margin-bottom:1em;
+		font-size:0.5em;
+	}
+
+	textarea {
+		display:block;
+		margin:0 auto;
+		width:60%;
+		font-size:0.5em;
+		border:1px solid rgb(204,204,204);
+		margin-bottom:1em;
+	}
+}
+
+section {
+
+	margin:2em 2em;
+
+	.image-container {
+		text-align: left;
+		width:80%;
+		background-color: rgb(224,225,226);
+		margin:1.5em auto;
+		color: white;
+		background-color:white;
+		border:1px solid rgb(213,213,213);
+
+		h1 {
+			padding:2em 1em;
+			font-size:1.4em;
+			color: grey;
+		}
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+@media(min-width: 992px) {
+
+	section {
+		margin:0 auto;
+		width:70%;
+	}
+
+
+}
