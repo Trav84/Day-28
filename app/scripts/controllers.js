@@ -23,8 +23,6 @@ angular.module('app.controllers', []).controller('submitController', function($s
 		.error(function(err) {
 			console.log(err);
 		});
-
-
 	}
 	getRequest();
 
@@ -35,7 +33,6 @@ angular.module('app.controllers', []).controller('submitController', function($s
 	};
 
 	$scope.cancelClick = function() {
-
 		$scope.myImageUrl = '';
 		$scope.myImageCaption = '';
 	};
