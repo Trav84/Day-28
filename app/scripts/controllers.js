@@ -5,6 +5,8 @@ angular.module('app.controllers', []).controller('submitController', function($s
 	$scope.myImageCaption = '';
 	$scope.menuHidden = false;
 	$scope.images = [];
+	$scope.urlCorrect = false;
+	$scope.capCorrect = false;
 	
 	function getRequest() {
 
@@ -37,15 +39,33 @@ angular.module('app.controllers', []).controller('submitController', function($s
 		$scope.myImageCaption = '';
 	};
 
-	$scope.submitClick = function(myImageUrl, myImageCaption) {
+	$scope.submitClick = function() {
 
-		$http.post(
-			'http://tiny-pizza-server.herokuapp.com/collections/travis-angular',
-			{
-				imageURL: myImageUrl,
-				imageCaption: myImageCaption
-			}
-		);
+		console.log($scope.myImageUrl);
+
+		if($scope.myImageUrl === '' || angular.isUndefined($scope.myImageUrl)) {
+			$scope.urlCorrect = false;
+			console.log('URL is empty or undefined');
+		} 
+		else if($scope.myImageUrl.substring(0,7) !== 'http://') {
+			$scope.urlCorrect = false;
+			console.log('URL is not proper');
+		} 
+
+		if($scope.myImageCaption === '' || angular.isUndefined($scope.myImageCaption)) {
+			$scope.capCorrect = false;
+			console.log('Caption is empty or undefined');
+		}
+
+		if($scope.urlCorrect === true && $scope.capCorrect === true) {
+			$http.post(
+				'http://tiny-pizza-server.herokuapp.com/collections/travis-angular',
+				{
+					imageURL: $scope.myImageUrl,
+					imageCaption: $scope.myImageCaption
+				}
+			);
+		}
 
 		$scope.myImageUrl = '';
 		$scope.myImageCaption = '';

@@ -34,10 +34,10 @@
 		</div>
 
 		<div class="expand-menu" ng-show="menuHidden">
-			<input type="url" ng-model="myImageUrl" placeholder="Image URL">
+			<input type="text" ng-model="myImageUrl" placeholder="Image URL">
 			<textarea type="text" ng-model="myImageCaption" placeholder="Image Caption"></textarea>
 			<button ng-click="cancelClick()"> Cancel </button>
-			<button class="submit-button" ng-click="submitClick(myImageUrl,myImageCaption)"> <i class="ion-image"> </i> Add Image </button>
+			<button class="submit-button" ng-click="submitClick()"> <i class="ion-image"> </i> Add Image </button>
 		</div>
 	</header>
 
