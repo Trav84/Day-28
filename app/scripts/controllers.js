@@ -5,8 +5,8 @@ angular.module('app.controllers', []).controller('submitController', function($s
 	$scope.myImageCaption = '';
 	$scope.menuHidden = false;
 	$scope.images = [];
-	$scope.urlCorrect = false;
-	$scope.capCorrect = false;
+	$scope.urlCorrect = true;
+	$scope.capCorrect = true;
 	
 	function getRequest() {
 
@@ -20,7 +20,7 @@ angular.module('app.controllers', []).controller('submitController', function($s
 					$scope.images.push(response[i]);
 				}
 			}
-			console.log(response);
+			console.log($scope.images);
 		})
 		.error(function(err) {
 			console.log(err);
@@ -65,6 +65,7 @@ angular.module('app.controllers', []).controller('submitController', function($s
 					imageCaption: $scope.myImageCaption
 				}
 			);
+				console.log('Posting...');
 		}
 
 		$scope.myImageUrl = '';
